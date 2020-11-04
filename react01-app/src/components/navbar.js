@@ -7,8 +7,8 @@ function Manu(){
         <Navbar bg="primary" variant="dark">
             <Container>
                 <Nav className="mr-auto">
-                    <NavLink to="/HomeScreen" className="text-white">Home</NavLink>
-                    <NavLink to="/CategoryScreen" className="text-white">Category</NavLink>
+                    <NavLink to="/" className="text-white">Home</NavLink>
+                    <NavLink to="/Category" className="text-white">Category</NavLink>
                     <NavLink to="/AboutUs" className="text-white">About Us</NavLink>
                 </Nav>
             </Container>

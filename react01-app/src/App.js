@@ -13,9 +13,9 @@ function App() {
         <BrowserRouter>
           <Navbar/>
           <Switch>
-            <Route exact={true} path="/" Screens={HomeScreen}></Route>
-            <Route path="/CategoryScreen" Screens={CategoryScreen}></Route>
-            <Route path="AboutUsScreen" Screens={AboutUsScreen}></Route>
+            <Route exact={true} path="/" component={HomeScreen}></Route>
+            <Route path="/Category" component={CategoryScreen}></Route>
+            <Route path="/AboutUs" component={AboutUsScreen}></Route>
           </Switch>
         </BrowserRouter>
       </header>
