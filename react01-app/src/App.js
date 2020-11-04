@@ -1,28 +1,40 @@
-import React from 'react';
-import HomeScreen from './screens/HomeScreen';
-import Navbar from './components/navbar'
+import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter, Route,Switch } from 'react-router-dom';
-import AboutUsScreen from './screens/AboutUsScreen';
-import CategoryScreen from './screens/CategoryScreen';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <BrowserRouter>
-          <Navbar/>
-          <Switch>
-            <Route exact={true} path="/" component={HomeScreen}></Route>
-            <Route path="/Category" component={CategoryScreen}></Route>
-            <Route path="/AboutUs" component={AboutUsScreen}></Route>
-          </Switch>
-        </BrowserRouter>
-      </header>
-      <div className="content">
+function TagEditor(props){
+  const [tageInput, setTageInput] = useState('')
+  
+  const onRemoveTag = (idx) => {
+    props.onChange(props.value.filter((value, index) => index !== idx));
+  }
+  return( 
+    <div className="TageWrap">
+      {props.value.map((tag, idx) => <div key={idx} className="tag">{tag}<i onClick={() => onRemoveTag(idx)}>x</i></div>)}
+      <div className="input">
+          <input  type="text" 
+          value={tageInput} 
+          onChange={e => setTageInput(e.currentTarget.value)} 
+          onKeyPress={e => {
+              if(e.nativeEvent.key === "Enter" && tageInput !== "") {
+                props.onChange([...props.value, tageInput]);
+                setTageInput('');
+              }
+          }}/>
       </div>
     </div>
-  );
+  )
+}
+
+function App() {
+  const [tages, setTages] = useState(["c++","php"])
+
+  return (
+    <div className="App">
+        <div>
+          <TagEditor value={tages} onChange={value => setTages(value)} />
+        </div>
+    </div>
+  )
 }
 
 export default App;

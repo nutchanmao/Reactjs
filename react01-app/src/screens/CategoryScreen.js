@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class CategoryScreen extends Component {
-    render() {
-        return (
-            <div>
-                <h4>Category page</h4>
+
+
+function TageEdit(){
+    const [Tage, setTage] = useState(["java"]);
+    return(
+        <div>
+            <div className="wrapTage">
+                <p>{Tage}</p>
             </div>
-        );
-    }
+        </div>
+    )
 }
 
-export default CategoryScreen;
+export default TageEdit;

@@ -41,3 +41,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.TageWrap{width:800px;background-color:darkgray;display:flex;border-radius:5px;}
+.TageWrap .tag{position: relative;display:inline-block;height:45px;margin:15px 15px;padding:3px 30px 3px 15px;line-height:40px;background-color:cadetblue;font-size:15px;border-radius:5px;}
+.TageWrap .tag i{position:absolute;top:0;right:0;display:inline-block;width:20px;height:20px;line-height:20px;cursor:pointer} 
+.input input{height:45px;margin-top:15px;font-size:15px;background:transparent;border:none;outline:none;}
